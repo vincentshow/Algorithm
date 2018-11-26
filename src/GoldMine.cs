@@ -10,7 +10,19 @@ namespace Algorithm
     {
         public int GetMaxValue(int maxMiners, Mine[] mines)
         {
-            return this.GetMaxValueAndMarkDigLabel(maxMiners, mines, mines.Length - 1);
+            var mineCount = mines.Length;
+            var memo = new int[mineCount][];
+
+            for (int i = 0; i < mineCount; i++)
+            {
+                memo[i] = new int[maxMiners + 1];
+                for (int j = 0; j < maxMiners + 1; j++)
+                {
+                    memo[i][j] = -1;
+                }
+            }
+
+            return this.GetMaxValueAndMarkDigLabel(maxMiners, mines, mines.Length - 1, memo);
         }
 
         /// <summary>
@@ -20,38 +32,48 @@ namespace Algorithm
         /// <param name="mines"></param>
         /// <param name="serialNo"></param>
         /// <returns></returns>
-        private int GetMaxValueAndMarkDigLabel(int maxMiners, Mine[] mines, int serialNo)
+        private int GetMaxValueAndMarkDigLabel(int maxMiners, Mine[] mines, int serialNo, int[][] memo)
         {
             if (serialNo < 0 || serialNo >= mines.Length)
             {
                 return 0;
             }
 
+            if (memo[serialNo][maxMiners] > -1)
+            {
+                return memo[serialNo][maxMiners];
+            }
+
+            var maxValue = 0;
             var current = mines[serialNo];
             if (serialNo == 0)
             {
                 if (maxMiners >= current.Miners)
                 {
                     current.IsDig = true;
-                    return current.Value;
+                    maxValue = current.Value;
                 }
                 else
                 {
                     current.IsDig = false;
-                    return 0;
                 }
             }
-
-            var dontDigValue = this.GetMaxValueAndMarkDigLabel(maxMiners, mines, serialNo - 1);
-            var digValue = 0;
-            if (maxMiners >= current.Miners)
+            else
             {
-                digValue = current.Value;
-                digValue += this.GetMaxValueAndMarkDigLabel(maxMiners - current.Miners, mines, serialNo - 1);
+                var dontDigValue = this.GetMaxValueAndMarkDigLabel(maxMiners, mines, serialNo - 1, memo);
+                var digValue = 0;
+                if (maxMiners >= current.Miners)
+                {
+                    digValue = current.Value;
+                    digValue += this.GetMaxValueAndMarkDigLabel(maxMiners - current.Miners, mines, serialNo - 1, memo);
+                }
+
+                maxValue = Math.Max(digValue, dontDigValue);
+                current.IsDig = maxValue == digValue;
             }
 
-            current.IsDig = digValue >= dontDigValue;
-            return Math.Max(digValue, dontDigValue);
+            memo[serialNo][maxMiners] = maxValue;
+            return maxValue;
         }
     }
 
