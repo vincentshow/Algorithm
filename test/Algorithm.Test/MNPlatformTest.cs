@@ -4,13 +4,11 @@ using Xunit.Abstractions;
 
 namespace Algorithm.Test
 {
-    public class MNPlatformTest
+    public class MNPlatformTest : TestBase
     {
-        private readonly ITestOutputHelper _output;
-
         public MNPlatformTest(ITestOutputHelper output)
+            : base(output)
         {
-            this._output = output;
         }
 
         [Theory]
