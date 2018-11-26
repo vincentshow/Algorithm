@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/src/bin/Debug
+/src/obj/Debug
+/test/Algorithm.Test/bin/Debug/netcoreapp2.1
+/test/Algorithm.Test/obj/Debug/netcoreapp2.1
