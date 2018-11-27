@@ -16,11 +16,11 @@ namespace Algorithm.Test
         }
 
         [Theory]
-        //[InlineData("20, 3; 50, 4; 10, 1", 7, 70)]
-        //[InlineData("20, 3; 50, 4; 10, 1; 80, 8; 60, 6", 10, 110)]
+        [InlineData("20, 3; 50, 4; 10, 1", 7, 70)]
+        [InlineData("20, 3; 50, 4; 10, 1; 80, 8; 60, 6", 10, 110)]
         [InlineData("20, 3; 50, 4; 10, 1; 80, 8; 60, 6", 11, 120)]
-        //[InlineData("20, 3; 50, 4; 10, 1; 80, 8; 60, 6", 8, 80)]
-        //[InlineData("10, 2; 20, 4; 60, 6; 80, 8; 100, 10", 23, 200)]
+        [InlineData("20, 3; 50, 4; 10, 1; 80, 8; 60, 6", 8, 80)]
+        [InlineData("10, 2; 20, 4; 60, 6; 80, 8; 100, 10", 23, 200)]
         public void TestSuccess(string input, int maxMiners, int expect)
         {
             if (string.IsNullOrEmpty(input))
@@ -42,8 +42,8 @@ namespace Algorithm.Test
                 mines[i] = new Mine(i, int.Parse(mineParam[0]), int.Parse(mineParam[1]));
             }
 
-            this.Output.WriteLine("source mines:");
-            this.Output.WriteLine(string.Join("; ", mines.ToList()));
+            this.Printer.WriteLine("source mines:");
+            this.Printer.WriteLine(string.Join("; ", mines.ToList()));
 
             var goldMine = new GoldMineProcessor();
             var maxValue = goldMine.GetMaxValue(maxMiners, mines);

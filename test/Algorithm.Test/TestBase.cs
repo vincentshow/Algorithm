@@ -8,11 +8,11 @@ namespace Algorithm.Test
 {
     public class TestBase
     {
-        public readonly ITestOutputHelper Output;
+        public readonly IPrintable Printer;
 
         public TestBase(ITestOutputHelper output)
         {
-            this.Output = output;
+            this.Printer = new TestPrinter(output);
         }
     }
 }
