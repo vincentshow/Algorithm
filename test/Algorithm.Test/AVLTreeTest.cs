@@ -7,9 +7,9 @@ using Xunit.Abstractions;
 
 namespace Algorithm.Test
 {
-    public class BinaryTreeTest : TestBase
+    public class AVLTreeTest : TestBase
     {
-        public BinaryTreeTest(ITestOutputHelper output)
+        public AVLTreeTest(ITestOutputHelper output)
             : base(output)
         {
         }
@@ -21,7 +21,7 @@ namespace Algorithm.Test
         {
             var sourceArray = this.GetSourceArray(source);
 
-            var bTree = new BinaryTree();
+            var bTree = new AVLTree();
             var tree = bTree.Build(sourceArray);
 
             Assert.NotNull(tree);
@@ -36,6 +36,7 @@ namespace Algorithm.Test
             this.Printer.WriteLine("PostOrder end");
         }
 
+        /*
         [Theory]
         [InlineData("10,5,13,18,19,14,1,12,7", 11, 12)]
         [InlineData("10,5,13,18,19,14,1,12,7", 15, 18)]
@@ -60,7 +61,7 @@ namespace Algorithm.Test
                 Assert.Equal(expect, floorNode.Value);
             }
         }
-
+        */
         private int[] GetSourceArray(string source)
         {
             var splitSource = source.Split(',');

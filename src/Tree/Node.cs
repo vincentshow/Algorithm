@@ -23,7 +23,7 @@ namespace Algorithm.Tree
 
         public Node Right { get; set; }
 
-        public int Height { get; set; }
+        public int Height { get; set; } = -1;
     }
 
     public static class NodeExtensions
@@ -56,7 +56,7 @@ namespace Algorithm.Tree
         {
             if (node == null || node.Right == null)
             {
-                return null;
+                return node;
             }
 
             var top = node.Right;
@@ -70,7 +70,7 @@ namespace Algorithm.Tree
         {
             if (node == null || node.Left == null)
             {
-                return null;
+                return node;
             }
 
             var top = node.Left;
@@ -78,6 +78,42 @@ namespace Algorithm.Tree
             top.Right = node;
 
             return top;
+        }
+
+        public static void PreOrder(this Node bTree, IPrintable printer)
+        {
+            if (bTree == null)
+            {
+                return;
+            }
+
+            printer.WriteLine(bTree.Value);
+            PreOrder(bTree.Left, printer);
+            PreOrder(bTree.Right, printer);
+        }
+
+        public static void InOrder(this Node bTree, IPrintable printer)
+        {
+            if (bTree == null)
+            {
+                return;
+            }
+
+            InOrder(bTree.Left, printer);
+            printer.WriteLine(bTree.Value);
+            InOrder(bTree.Right, printer);
+        }
+
+        public static void PostOrder(this Node bTree, IPrintable printer)
+        {
+            if (bTree == null)
+            {
+                return;
+            }
+
+            PostOrder(bTree.Left, printer);
+            PostOrder(bTree.Right, printer);
+            printer.WriteLine(bTree.Value);
         }
     }
 }

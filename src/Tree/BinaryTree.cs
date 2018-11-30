@@ -13,7 +13,7 @@ namespace Algorithm.Tree
             Node root = null;
             for (int i = 0; i < source.Length; i++)
             {
-                this.CreateBTree(source[i],ref root);
+                this.CreateBTree(source[i], ref root);
             }
             return root;
         }
@@ -39,43 +39,7 @@ namespace Algorithm.Tree
             return current;
         }
 
-        public void PreOrder(Node bTree, IPrintable printer)
-        {
-            if (bTree == null)
-            {
-                return;
-            }
-
-            printer.WriteLine(bTree.Value);
-            PreOrder(bTree.Left, printer);
-            PreOrder(bTree.Right, printer);
-        }
-
-        public void InOrder(Node bTree, IPrintable printer)
-        {
-            if (bTree == null)
-            {
-                return;
-            }
-
-            InOrder(bTree.Left, printer);
-            printer.WriteLine(bTree.Value);
-            InOrder(bTree.Right, printer);
-        }
-
-        public void PostOrder(Node bTree, IPrintable printer)
-        {
-            if (bTree == null)
-            {
-                return;
-            }
-
-            PostOrder(bTree.Left, printer);
-            PostOrder(bTree.Right, printer);
-            printer.WriteLine(bTree.Value);
-        }
-
-        private void CreateBTree(int next,ref Node root)
+        private void CreateBTree(int next, ref Node root)
         {
             var newNode = new Node(next);
             if (root == null)
