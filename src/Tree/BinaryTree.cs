@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm
+namespace Algorithm.Tree
 {
     public class BinaryTree
     {
@@ -109,23 +109,5 @@ namespace Algorithm
                 }
             }
         }
-    }
-
-    public class Node
-    {
-        public Node()
-        {
-        }
-
-        public Node(int value)
-        {
-            this.Value = value;
-        }
-
-        public int Value { get; set; }
-
-        public Node Left { get; set; }
-
-        public Node Right { get; set; }
     }
 }
