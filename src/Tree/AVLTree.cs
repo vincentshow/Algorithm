@@ -50,10 +50,10 @@ namespace Algorithm.Tree
                 return node;
             }
 
-            var rotateNoded = node.Left;
+            var rotatedNode = node.Left;
             if (next > rotateNoded.Value)
             {
-                node = node.RotateLeft();
+                rotatedNode = rotatedNode.RotateLeft();
             }
             return node.RotateRight();
         }
@@ -65,10 +65,10 @@ namespace Algorithm.Tree
                 return node;
             }
 
-            var rotateNoded = node.Right;
+            var rotatedNode = node.Right;
             if (next < rotateNoded.Value)
             {
-                node = node.RotateRight();
+                rotatedNode = rotatedNode.RotateRight();
             }
             return node.RotateLeft();
         }
