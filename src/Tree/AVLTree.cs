@@ -35,7 +35,7 @@ namespace Algorithm.Tree
                 else
                 {
                     node.Left = CreateTree(next, node.Left);
-                    TryAdjustLeftNode(next, node);
+                    node = TryAdjustLeftNode(next, node);
                 }
             }
 
