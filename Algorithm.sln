@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "src\Algorithm.csproj", "{DC849CE7-F811-49F7-83C7-B1D9C8F5F60B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm.Test", "test\Algorithm.Test\Algorithm.Test.csproj", "{0FA5DCE2-3EA3-48E5-8584-8692E035F34D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm.Test", "test\Algorithm.Test\Algorithm.Test.csproj", "{0FA5DCE2-3EA3-48E5-8584-8692E035F34D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E46E9EF1-2B0B-4D9E-A1AB-BE121806082D}"
 	ProjectSection(SolutionItems) = preProject

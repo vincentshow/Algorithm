@@ -14,6 +14,10 @@ namespace Algorithm.Test
         {
         }
 
+        /// <summary>
+        /// TODO lost 2 and 13
+        /// </summary>
+        /// <param name="source"></param>
         [Theory]
         [InlineData("1,5,3,8,9,4,2,6,7")]
         [InlineData("10,5,13,18,19,14,1,12,7")]

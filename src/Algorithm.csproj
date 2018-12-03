@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HanoiTower.cs" />
     <Compile Include="Tree\AVLTree.cs" />
     <Compile Include="Tree\BinaryTree.cs" />
     <Compile Include="GoldMine.cs" />

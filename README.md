@@ -12,3 +12,6 @@
 
 ## `WIP` avl tree
 - balanced binary sort tree: difference in height is less than 2 between left and right node
+
+## hanoi tower
+- there're three towers(called A,B and C) and n different circles whose redius is growing with serial. Move these circles from A to C keeping the serial no in A. One circle every time, and the large circle cannot be above the small ones.
