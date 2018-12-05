@@ -53,7 +53,7 @@ namespace Algorithm.Tree
             var rotatedNode = node.Left;
             if (next > rotatedNode.Value)
             {
-                rotatedNode = rotatedNode.RotateLeft();
+                node.Left = rotatedNode.RotateLeft();
             }
 
             return node.RotateRight();
@@ -69,7 +69,7 @@ namespace Algorithm.Tree
             var rotatedNode = node.Right;
             if (next < rotatedNode.Value)
             {
-                rotatedNode = rotatedNode.RotateRight();
+                node.Right = rotatedNode.RotateRight();
             }
             return node.RotateLeft();
         }

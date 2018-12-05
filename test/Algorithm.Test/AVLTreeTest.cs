@@ -19,6 +19,7 @@ namespace Algorithm.Test
         /// </summary>
         /// <param name="source"></param>
         [Theory]
+        //[InlineData("1,5,3,8")]
         [InlineData("1,5,3,8,9,4,2,6,7")]
         [InlineData("10,5,13,18,19,14,1,12,7")]
         public void TestBuildAndTraverse(string source)

@@ -63,6 +63,9 @@ namespace Algorithm.Tree
             node.Right = top.Left;
             top.Left = node;
 
+            top.Height = top.GetHeight();
+            node.Height = node.GetHeight();
+
             return top;
         }
 
@@ -76,6 +79,9 @@ namespace Algorithm.Tree
             var top = node.Left;
             node.Left = top.Right;
             top.Right = node;
+
+            top.Height = top.GetHeight();
+            node.Height = node.GetHeight();
 
             return top;
         }

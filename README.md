@@ -6,11 +6,11 @@
 
 ## binary sort tree
 - build a binary sort tree with an unsorted array
-- transfer to a balanced btree? ref avl tree
+- transfer to a balanced btree? `ref avl tree`
 - output an btree using one way of pre-order, in-order or post-order
 - find a node whose value is just bigger than the specified number
 
-## `WIP` avl tree
+## avl tree
 - balanced binary sort tree: difference in height is less than 2 between left and right node
 
 ## hanoi tower
